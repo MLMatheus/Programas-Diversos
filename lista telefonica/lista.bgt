@@ -1,0 +1,25 @@
+string[] nomes(1000);
+string[] telefones(1000);
+
+void main() {
+int tamanho = 0;
+
+while(true) {
+string opcao = input_box("Menu", "Tecle sua opção: 1, cadastrar contato. 2, listar contatos. 3, sair do programa");
+
+if(opcao == "1") {
+string nome = input_box("Novo contato", "Digite o nome do contato: ");
+string telefone = input_box("Telefone", "Digite o número do contato");
+nomes[tamanho] = nome;
+telefones[tamanho] = telefone;
+tamanho++;
+}
+else if(opcao == "2") {
+for(int i = 0; i < tamanho; i++) {
+alert("Contatos", "Nome: "+nomes[i]+" telefone: "+telefones[i]);
+}
+}
+else if(opcao == "3") exit();
+wait(5);
+}
+}
